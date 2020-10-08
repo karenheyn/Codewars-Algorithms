@@ -12,3 +12,12 @@ function solution(string) {
   }
   return splitArray.join("");
 }
+
+// #2 10/8/20
+var isAnagram = function (test, original) {
+  let testArray = test.toLowerCase().split("").sort().join("");
+  let origArray = original.toLowerCase().split("").sort().join("");
+  if (testArray == origArray) {
+    return true;
+  } else return false;
+};
