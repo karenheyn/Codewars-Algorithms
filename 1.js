@@ -1,4 +1,4 @@
-// #1 10/8/20
+// #1 10/8/20 create a space in camelcase. "helloWorld" => "hello World"
 function solution(string) {
   let splitString = string.split("");
   let splitArray = [];
@@ -13,7 +13,7 @@ function solution(string) {
   return splitArray.join("");
 }
 
-// #2 10/8/20
+// #2 10/8/20 checks if anagram
 var isAnagram = function (test, original) {
   let testArray = test.toLowerCase().split("").sort().join("");
   let origArray = original.toLowerCase().split("").sort().join("");
@@ -21,3 +21,8 @@ var isAnagram = function (test, original) {
     return true;
   } else return false;
 };
+
+// #3 10/9/20 removes non-numbers
+function filter_list(l) {
+  return l.filter(Number.isInteger);
+}
