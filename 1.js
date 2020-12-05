@@ -26,3 +26,14 @@ var isAnagram = function (test, original) {
 function filter_list(l) {
   return l.filter(Number.isInteger);
 }
+
+// #4 12/5/20 return index of capital letters
+var capitals = function (word) {
+  let indexArray = [];
+  word.split("").map((letter, index) => {
+    if (letter.toUpperCase() === letter) {
+      indexArray.push(index);
+    }
+  });
+  return indexArray;
+};
