@@ -37,3 +37,40 @@ var capitals = function (word) {
   });
   return indexArray;
 };
+
+// #5 12/17/20 facebook likes feature https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript
+function likes(names) {
+  let array = [];
+  names.map((name, index) => {
+    if (index !== names.length - 1 && names.length < 4 && names.length > 1) {
+      array.push(name);
+    }
+    if (index == names.length - 1 && names.length < 4 && names.length > 1) {
+      array.push("and " + name);
+    }
+    if (names.length > 3) {
+      if (index < 2) {
+        array.push(name);
+      }
+    }
+    if (names.length == 1) {
+      array.push(name + " likes this");
+    }
+  });
+  if (names.length > 3) {
+    array.push("and " + (names.length - 2) + " others like this");
+  }
+  if (names === undefined || names.length == 0) {
+    array.push("no one likes this");
+  }
+  if (names.length == 2) {
+    return array.join().replace(/,/g, " ") + " like this";
+  }
+  if (names.length === 3) {
+    return (
+      array.join().replace(/,/g, ", ").replace(/, and/g, " and") + " like this"
+    );
+  } else {
+    return array.join().replace(/,/g, ", ").replace(/, and/g, " and");
+  }
+}
