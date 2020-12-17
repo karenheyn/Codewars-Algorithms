@@ -87,3 +87,31 @@ function isIsogram(str) {
   }
   return true;
 }
+
+// #7 Iq test returns index of unique item https://www.codewars.com/kata/552c028c030765286c00007d/train/javascript
+
+function iqTest(numbers) {
+  let trueAmt = 0;
+  let falseAmt = 0;
+  const x = [];
+  let y = numbers.split(" ");
+  y.map((item, index) => {
+    if (item % 2 === 0) {
+      x.push(false);
+    } else {
+      x.push(true);
+    }
+  });
+  x.map((item) => {
+    if (item === true) {
+      trueAmt++;
+    } else if (item === false) {
+      falseAmt++;
+    }
+  });
+  if (trueAmt < falseAmt) {
+    return x.indexOf(true) + 1;
+  } else if (trueAmt > falseAmt) {
+    return x.indexOf(false) + 1;
+  }
+}
