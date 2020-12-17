@@ -74,3 +74,16 @@ function likes(names) {
     return array.join().replace(/,/g, ", ").replace(/, and/g, " and");
   }
 }
+
+// #6 checks if string is isogram
+function isIsogram(str) {
+  const low = str.toLowerCase();
+  for (let i = 0; i < low.length; i++) {
+    for (let j = 0; j < low.length; j++) {
+      if (low[i] === low[j] && i != j) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
